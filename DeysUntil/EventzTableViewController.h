@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) NSMutableArray *eventz;
 
-- (void) loadBullShitData;
+- (void) loadTestData;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 

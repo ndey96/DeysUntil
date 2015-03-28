@@ -9,7 +9,8 @@
 #import "AddEventViewController.h"
 
 @interface AddEventViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *eventText;
+@property (weak, nonatomic) IBOutlet UITextField *textFromTextBox;
+@property (weak, nonatomic) IBOutlet UIDatePicker *dateFromPicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @end
 
@@ -34,10 +35,12 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if (sender != self.saveButton) return;
-    if (self.eventText.text.length > 0) {
+    if (self.textFromTextBox.text.length > 0) {
         self.event = [[Event alloc] init];
-        self.event.eventName = self.eventText.text;
-        //self.event.eventData =
+        self.event.eventName = self.textFromTextBox.text;
+        self.event.eventDate = self.dateFromPicker.date;
+        NSLog(@"%@", self.event.eventName);
+        NSLog(@"%@", self.event.eventDate);
     }
 }
 

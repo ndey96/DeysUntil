@@ -75,9 +75,6 @@
                                 <rect key="frame" x="16" y="204" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="eventText:" destination="xky-Fl-Jgu" eventType="editingDidEnd" id="CYM-4y-zgK"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,14 +93,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="5DQ-uj-k7w">
                             <connections>
-                                <action selector="SaveButton:" destination="xky-Fl-Jgu" id="wBn-A0-uMK"/>
                                 <segue destination="jTw-2l-klS" kind="unwind" unwindAction="unwindToList:" id="Z8o-mw-cAB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="eventText" destination="3t3-5C-uUJ" id="oCX-ej-qhK"/>
+                        <outlet property="dateFromPicker" destination="XkM-9h-cav" id="en4-nr-XPq"/>
                         <outlet property="saveButton" destination="5DQ-uj-k7w" id="Cu3-9K-tAa"/>
+                        <outlet property="textFromTextBox" destination="3t3-5C-uUJ" id="hOJ-r6-R6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PM2-6V-Zsf" userLabel="First Responder" sceneMemberID="firstResponder"/>

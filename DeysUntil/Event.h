@@ -11,6 +11,6 @@
 @interface Event : NSObject
 
 @property (strong, nonatomic) NSDate *eventDate;
-@property (strong) NSString *eventName;
+@property (strong, nonatomic) NSString *eventName;
 
 @end
