@@ -33,6 +33,21 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//    NSTimer *timer;
+//    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+//                                             target:self
+//                                           selector:@selector(updateCountdownOnVisibleCells)
+//                                           userInfo:nil
+//                                            repeats:YES];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    // (Re)start the timer
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    // cancel the timer
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,23 +72,24 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventCell" forIndexPath:indexPath];
     Event *event = [self.eventz objectAtIndex:indexPath.row];
     cell.textLabel.text = event.eventName;
-    [self updateTime:indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",event.eventDate];
+    //cell.detailTextLabel.text = [self updateCountdownOnVisibleCells:indexPath.row];
     
     return cell;
 }
 
 
--(void) updateTime:(NSUInteger*)eventNumber {
+- (void) updateCountdownOnVisibleCells:(NSUInteger)eventNumber {
     //Get the time left until the specified date
-    NSInteger ti = [[NSMutableArray objectAtIndex:eventNumber] timeIntervalSinceNow];
+    Event *event = [self.eventz objectAtIndex:eventNumber];
+    NSDate *date = event.eventDate;
+    NSInteger ti = date.timeIntervalSinceNow;
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
     NSInteger hours = (ti / 3600) % 24;
     NSInteger days = (ti / 86400);
     
-    //Update the lable with the remaining time
-//    self.countdownLabel.text = [NSString stringWithFormat:@"%02i days %02i hrs %02i min %02i sec", days, hours, minutes, seconds];
+    //Update the label with the remaining time
+    [NSString stringWithFormat:@"%02li:%02li:%02li:%02li", (long)days, (long)hours, (long)minutes, (long)seconds];
 }
 
 
