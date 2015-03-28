@@ -27,6 +27,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSDate *)dateWithZeroSeconds:(NSDate *)date
+{
+    NSTimeInterval time = floor([date timeIntervalSinceReferenceDate] / 60.0) * 60.0;
+    return  [NSDate dateWithTimeIntervalSinceReferenceDate:time];
+}
+
+- (void)setNotification:(Event *)notifEvent{
+    UILocalNotification  *localNotification = [[UILocalNotification alloc] init];
+    NSDate *flooredDateTime = [self dateWithZeroSeconds:(notifEvent.eventDate)];
+    
+    
+    localNotification.fireDate = flooredDateTime;
+    localNotification.alertBody = [NSString stringWithFormat:@"Event %@ is happening NOW!", notifEvent.eventName];
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
 
 #pragma mark - Navigation
 
@@ -40,8 +57,14 @@
         self.event.eventName = self.textFromTextBox.text;
         self.event.eventDate = self.dateFromPicker.date;
         NSLog(@"%@", self.event.eventName);
-        NSLog(@"%@", self.event.eventDate);
+        NSLog(@"%@", [self dateWithZeroSeconds:(self.event.eventDate)]);
+    
+        if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+            [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge categories:nil]];
+            [self setNotification:(self.event)];
+        }
     }
+    
 }
 
 
