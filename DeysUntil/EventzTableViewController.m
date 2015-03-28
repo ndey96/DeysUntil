@@ -103,9 +103,8 @@
 
 - (void) loadBullShitData {
     Event *event1 = [[Event alloc] init];
-    event1.eventName = @"fuckity fuck";
+    event1.eventName = @"some event name";
     [self.eventz addObject:event1];
-    NSLog(@"BULLSHITE LOADED");
 }
 
 @end
