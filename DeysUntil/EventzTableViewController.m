@@ -16,13 +16,18 @@
 
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue{
-    
+    AddEventViewController *source = [segue sourceViewController];
+    Event *swagEvent = source.event;
+    if (swagEvent != nil) {
+        [self.eventz addObject:swagEvent];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.eventz = [[NSMutableArray alloc] init];
-    [self loadBullShitData];
+    [self loadTestData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -101,7 +106,7 @@
 }
 */
 
-- (void) loadBullShitData {
+- (void) loadTestData {
     Event *event1 = [[Event alloc] init];
     event1.eventName = @"some event name";
     [self.eventz addObject:event1];

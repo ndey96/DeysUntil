@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 #import <Foundation/Foundation.h>
+#import "AddEventViewController.h"
+
 
 @interface EventzTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *eventz;
 
-- (void) loadBullShitData;
+- (void) loadTestData;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 
