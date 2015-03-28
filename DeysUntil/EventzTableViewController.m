@@ -16,7 +16,12 @@
 
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue{
-    
+    AddEventViewController *source = [segue sourceViewController];
+    Event *swagEvent = source.event;
+    if (swagEvent != nil) {
+        [self.eventz addObject:swagEvent];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewDidLoad {
