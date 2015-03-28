@@ -49,6 +49,36 @@
             endingLineNumber = "11"
             landmarkName = "textFromTextBox"
             landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AddEventViewController textFromTextBox]"
+                  moduleName = "DeysUntil"
+                  urlString = "file:///Users/nolandey/Desktop/XCode%20Projects/DeysUntil/DeysUntil/AddEventViewController.m"
+                  timestampString = "449262331.022285"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AddEventViewController setTextFromTextBox:]"
+                  moduleName = "DeysUntil"
+                  urlString = "file:///Users/nolandey/Desktop/XCode%20Projects/DeysUntil/DeysUntil/AddEventViewController.m"
+                  timestampString = "449262331.02255"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
