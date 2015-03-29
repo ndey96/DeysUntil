@@ -27,12 +27,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.eventz = [[NSMutableArray alloc] init];
-    [self loadTestData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSTimer *timer;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                             target:self
+                                           selector:@selector(updateCountdownOnVisibleCells:)
+                                           userInfo:nil
+                                            repeats:YES];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    // (Re)start the timer
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    // cancel the timer
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,10 +72,37 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventCell" forIndexPath:indexPath];
     Event *event = [self.eventz objectAtIndex:indexPath.row];
     cell.textLabel.text = event.eventName;
+    [self updateCountdownOnVisibleCells:[self.tableView visibleCells]];
     
     return cell;
 }
     
+
+- (void) updateCountdownOnVisibleCells:(NSTimer*)timer {
+    //Get the time left until the specified date
+   
+    //access visible cells without passing it
+    //Event *event = [self.eventz objectAtIndex:eventNumber];
+    //NSDate *date = event.eventDate;
+    
+    NSArray *visibleCells = [self.tableView visibleCells];
+    
+    for (UITableViewCell *cell in visibleCells)
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        Event *event = [self.eventz objectAtIndex:indexPath.row];
+        NSInteger time = event.eventDate.timeIntervalSinceNow;
+        NSInteger seconds = time % 60;
+        NSInteger minutes = (time / 60) % 60;
+        NSInteger hours = (time / 3600) % 24;
+        NSInteger days = (time / 86400);
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%02li:%02li:%02li:%02li", (long)days, (long)hours, (long)minutes, (long)seconds];
+    }
+    
+    //Update the label with the remaining time
+    
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -106,10 +148,5 @@
 }
 */
 
-- (void) loadTestData {
-    Event *event1 = [[Event alloc] init];
-    event1.eventName = @"some event name";
-    [self.eventz addObject:event1];
-}
 
 @end

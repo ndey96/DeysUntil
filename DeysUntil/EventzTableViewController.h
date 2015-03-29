@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSMutableArray *eventz;
 
 - (void) loadTestData;
-
+- (void) updateCountdownOnVisibleCells:(NSTimer*)visibleCells;
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
