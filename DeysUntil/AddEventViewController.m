@@ -40,7 +40,7 @@
     
     localNotification.fireDate = flooredDateTime;
     localNotification.alertBody = [NSString stringWithFormat:@"Event %@ is happening NOW!", notifEvent.eventName];
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.soundName = @"yahoo.mp3";
     localNotification.applicationIconBadgeNumber = 1;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
@@ -56,13 +56,10 @@
         self.event = [[Event alloc] init];
         self.event.eventName = self.textFromTextBox.text;
         self.event.eventDate = self.dateFromPicker.date;
-        NSLog(@"%@", self.event.eventName);
-        NSLog(@"%@", [self dateWithZeroSeconds:(self.event.eventDate)]);
     
-        if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
-            [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge categories:nil]];
             [self setNotification:(self.event)];
-        }
+        
+        NSLog(@"asdf");
     }
     
 }
