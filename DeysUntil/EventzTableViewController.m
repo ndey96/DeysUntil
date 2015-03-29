@@ -44,6 +44,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     // (Re)start the timer
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -92,11 +93,17 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         Event *event = [self.eventz objectAtIndex:indexPath.row];
         NSInteger time = event.eventDate.timeIntervalSinceNow;
-        NSInteger seconds = time % 60;
-        NSInteger minutes = (time / 60) % 60;
-        NSInteger hours = (time / 3600) % 24;
-        NSInteger days = (time / 86400);
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%02li:%02li:%02li:%02li", (long)days, (long)hours, (long)minutes, (long)seconds];
+        if (time>0){
+            NSInteger seconds = time % 60;
+            NSInteger minutes = (time / 60) % 60;
+            NSInteger hours = (time / 3600) % 24;
+            NSInteger days = (time / 86400);
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%02li:%02li:%02li:%02li", (long)days, (long)hours, (long)minutes, (long)seconds];
+        }else{
+            cell.detailTextLabel.text = @"FINISHED";
+        }
+        
+        
     }
     
     //Update the label with the remaining time
