@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D82CC1C51AC75495008119D4 /* yahoo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D82CC1C41AC75495008119D4 /* yahoo.mp3 */; };
+		D82CC1C91AC784D4008119D4 /* yahoo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D82CC1C81AC784D4008119D4 /* yahoo.mp3 */; };
+		D82CC1CC1AC790AC008119D4 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82CC1CB1AC790AC008119D4 /* EventDetailViewController.m */; };
 		F7FBCE951AC6706700E9A46A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FBCE941AC6706700E9A46A /* main.m */; };
 		F7FBCE981AC6706700E9A46A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7FBCE971AC6706700E9A46A /* AppDelegate.m */; };
 		F7FBCE9E1AC6706700E9A46A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FBCE9C1AC6706700E9A46A /* Main.storyboard */; };
@@ -30,7 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D82CC1C41AC75495008119D4 /* yahoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = yahoo.mp3; path = ../../../Documents/yahoo.mp3; sourceTree = "<group>"; };
+		D82CC1C81AC784D4008119D4 /* yahoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = yahoo.mp3; path = ../yahoo.mp3; sourceTree = "<group>"; };
+		D82CC1CA1AC790AC008119D4 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		D82CC1CB1AC790AC008119D4 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		F7FBCE8F1AC6706700E9A46A /* DeysUntil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeysUntil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FBCE931AC6706700E9A46A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7FBCE941AC6706700E9A46A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,7 +74,6 @@
 		F7FBCE861AC6706700E9A46A = {
 			isa = PBXGroup;
 			children = (
-				D82CC1C41AC75495008119D4 /* yahoo.mp3 */,
 				F7FBCE911AC6706700E9A46A /* DeysUntil */,
 				F7FBCEAB1AC6706800E9A46A /* DeysUntilTests */,
 				F7FBCE901AC6706700E9A46A /* Products */,
@@ -102,6 +104,8 @@
 				F7FBCE9F1AC6706700E9A46A /* Images.xcassets */,
 				F7FBCEA11AC6706700E9A46A /* LaunchScreen.xib */,
 				F7FBCE921AC6706700E9A46A /* Supporting Files */,
+				D82CC1CA1AC790AC008119D4 /* EventDetailViewController.h */,
+				D82CC1CB1AC790AC008119D4 /* EventDetailViewController.m */,
 			);
 			path = DeysUntil;
 			sourceTree = "<group>";
@@ -109,6 +113,7 @@
 		F7FBCE921AC6706700E9A46A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D82CC1C81AC784D4008119D4 /* yahoo.mp3 */,
 				F7FBCE931AC6706700E9A46A /* Info.plist */,
 				F7FBCE941AC6706700E9A46A /* main.m */,
 			);
@@ -215,7 +220,7 @@
 				F7FBCE9E1AC6706700E9A46A /* Main.storyboard in Resources */,
 				F7FBCEA31AC6706700E9A46A /* LaunchScreen.xib in Resources */,
 				F7FBCEA01AC6706700E9A46A /* Images.xcassets in Resources */,
-				D82CC1C51AC75495008119D4 /* yahoo.mp3 in Resources */,
+				D82CC1C91AC784D4008119D4 /* yahoo.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82CC1CC1AC790AC008119D4 /* EventDetailViewController.m in Sources */,
 				F7FBCE981AC6706700E9A46A /* AppDelegate.m in Sources */,
 				F7FBCEBD1AC6DACC00E9A46A /* AddEventViewController.m in Sources */,
 				F7FBCEC01AC6E06D00E9A46A /* Event.m in Sources */,
