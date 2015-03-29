@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
+#import "EventzTableViewController.h"
 
 @interface AddEventViewController : UIViewController
 
 @property Event *event;
+
+- (IBAction)setNotification:(Event *)notifEvent;
+
+- (NSDate *)dateWithZeroSeconds:(NSDate *)date;
 
 @end

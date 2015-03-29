@@ -27,6 +27,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSDate *)dateWithZeroSeconds:(NSDate *)date
+{
+    NSTimeInterval time = floor([date timeIntervalSinceReferenceDate] / 60.0) * 60.0;
+    return  [NSDate dateWithTimeIntervalSinceReferenceDate:time];
+}
+
+- (void)setNotification:(Event *)notifEvent{
+    UILocalNotification  *localNotification = [[UILocalNotification alloc] init];
+    NSDate *flooredDateTime = [self dateWithZeroSeconds:(notifEvent.eventDate)];
+    
+    
+    localNotification.fireDate = flooredDateTime;
+    localNotification.alertBody = [NSString stringWithFormat:@"Event %@ is happening NOW!", notifEvent.eventName];
+    localNotification.soundName = @"yahoo.mp3";
+    localNotification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
 
 #pragma mark - Navigation
 
@@ -39,9 +56,12 @@
         self.event = [[Event alloc] init];
         self.event.eventName = self.textFromTextBox.text;
         self.event.eventDate = self.dateFromPicker.date;
-        NSLog(@"%@", self.event.eventName);
-        NSLog(@"%@", self.event.eventDate);
+    
+            [self setNotification:(self.event)];
+        
+        NSLog(@"asdf");
     }
+    
 }
 
 

@@ -20,4 +20,6 @@
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
+
 @end
